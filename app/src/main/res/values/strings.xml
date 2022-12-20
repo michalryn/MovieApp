@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="details_movie_name">Movie Name</string>
+    <string name="details_actors">Actors</string>
+    <string name="details_characters">Characters</string>
+</resources>
