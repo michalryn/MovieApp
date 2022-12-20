@@ -3,17 +3,23 @@
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 z
 Japp/src/main/java/com/example/movieapp/Listeners/OnMovieClickListener.java,8\a\8a854f2257c0b16cf1dea2c4447f99010c3c7508
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 y
 Iapp/src/main/java/com/example/movieapp/Listeners/OnSearchApiListener.java,2\3\23ee3f33329ad85acc305e3e66313e0c056f0d0f
-t
-Dapp/src/main/java/com/example/movieapp/Models/SearchApiResponse.java,1\2\122c45bc37216729e392afd8a25511e0d1565d31
-t
-Dapp/src/main/java/com/example/movieapp/Models/SearchArrayObject.java,2\a\2a21cf003e946ab2efc50047f2c54d8d70e3822d
 h
 8app/src/main/java/com/example/movieapp/Models/Actor.java,6\b\6b3a862d46a682cb07982536adffaf1e28e32330
 u
 Eapp/src/main/java/com/example/movieapp/Models/DetailsApiResponse.java,f\a\faf183d821227ef29490dc88658f5baf91de5866
 i
 9app/src/main/java/com/example/movieapp/Models/Person.java,a\0\a06085d9d16e380b1ad5cb4a2fbfe22daa903566
+x
+Happ/src/main/java/com/example/movieapp/Adapters/CastRecyclerAdapter.java,b\3\b3aebf8c0201eea97440782517f0f3d2c4884493
+t
+Dapp/src/main/java/com/example/movieapp/Models/SearchArrayObject.java,2\a\2a21cf003e946ab2efc50047f2c54d8d70e3822d
+t
+Dapp/src/main/java/com/example/movieapp/Models/SearchApiResponse.java,1\2\122c45bc37216729e392afd8a25511e0d1565d31
+x
+Happ/src/main/java/com/example/movieapp/Adapters/HomeRecyclerAdapter.java,7\7\7706ae6c212b415df4d27e2a4822e2528bcf623d
+h
+8app/src/main/java/com/example/movieapp/MovieService.java,4\c\4c5ba58f09eb35d9429b542679ff637977671ddd
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

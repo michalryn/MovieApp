@@ -1,6 +1,8 @@
 package com.example.movieapp.Models;
 
-public class SearchArrayObject {
+import java.io.Serializable;
+
+public class SearchArrayObject implements Serializable {
     String id = "";
     String title = "";
     String image = "";
