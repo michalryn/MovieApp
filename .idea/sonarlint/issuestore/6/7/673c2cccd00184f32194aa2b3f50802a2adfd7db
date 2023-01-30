@@ -1,0 +1,8 @@
+
+f	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒûÅì
+h
+java:S1659"RDeclare "textViewMovieReleased" and all following declarations on a separate line.(³®”²
+Q
+java:S1874"6Remove this use of "ProgressDialog"; it is deprecated.(¡æÓÂüÿÿÿÿ
+Q	java:S125;"<This block of commented-out lines of code should be removed.(˜€âö
+Q	java:S125="<This block of commented-out lines of code should be removed.(„Ì™¢

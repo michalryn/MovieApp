@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.movieapp.Models.Actor;
 import com.example.movieapp.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CastRecyclerAdapter extends RecyclerView.Adapter<CastViewHolder>{
@@ -21,7 +22,7 @@ public class CastRecyclerAdapter extends RecyclerView.Adapter<CastViewHolder>{
 
     public CastRecyclerAdapter(Context context, List<Actor> list) {
         this.context = context;
-        this.list = list;
+        this.list = list != null ? list : new ArrayList<Actor>();
     }
 
     @NonNull

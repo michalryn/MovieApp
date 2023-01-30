@@ -1,0 +1,25 @@
+
+e	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Øãða
+f	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ù¨À
+f	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä£€Ý
+C
+java:S1604>"(Make this anonymous inner class a lambda(ÝÙ¶¬øÿÿÿÿ
+p	java:S116'"VRename this field "shake_count" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¨Àðùÿÿÿÿ
+Q	java:S125%"<This block of commented-out lines of code should be removed.(¡€®
+Q	java:S1253"<This block of commented-out lines of code should be removed.(æô¥Ä
+—
+java:S1186v"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(§Ûëè
+P
+java:S1854[":Remove this useless assignment to local variable "z_accl".(ä£€Ý
+A
+java:S1481["+Remove this unused "z_accl" local variable.(ä£€Ý
+Q	java:S125d"<This block of commented-out lines of code should be removed.(¨éó†
+Q	java:S125g"<This block of commented-out lines of code should be removed.(·ã¶¡
+V	java:S125l"<This block of commented-out lines of code should be removed.(ÔÚ¦ùÿÿÿÿ
+V	java:S125p"<This block of commented-out lines of code should be removed.(ÿ—£×þÿÿÿÿ
+3
+java:S2119{"Save and re-use this "Random".(¼ÝÅf
+Q	java:S125}"<This block of commented-out lines of code should be removed.(²¦Ëí
+^	java:S125€"<This block of commented-out lines of code should be removed.(ò¾à‹ûÿÿÿÿ8¡šõƒß0
+[
+java:S3398¬"?Move this method into the anonymous class declared at line 156.(Ä‘˜âþÿÿÿÿ

@@ -5,8 +5,11 @@ import android.widget.Toast;
 
 import com.example.movieapp.Listeners.OnDetailsApiListener;
 import com.example.movieapp.Listeners.OnSearchApiListener;
+import com.example.movieapp.Listeners.OnTopMoviesApiListener;
 import com.example.movieapp.Models.DetailsApiResponse;
 import com.example.movieapp.Models.SearchApiResponse;
+import com.example.movieapp.Models.TopMovie;
+import com.example.movieapp.Models.TopMoviesList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -71,6 +74,27 @@ public class MovieService {
         });
     }
 
+    public void searchTopMovies(OnTopMoviesApiListener listener) {
+        getTop250Movies getTop250Movies = retrofit.create(MovieService.getTop250Movies.class);
+        Call<TopMoviesList> call = getTop250Movies.callTopMovies();
+
+        call.enqueue(new Callback<TopMoviesList>() {
+            @Override
+            public void onResponse(Call<TopMoviesList> call, Response<TopMoviesList> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(context, "Couldn't fetch data", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                listener.onResponse(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<TopMoviesList> call, Throwable t) {
+                listener.onError(t.getMessage());
+            }
+        });
+    }
+
     public interface getMovies {
         @Headers({
                 "Accept: application/json"
@@ -89,5 +113,13 @@ public class MovieService {
         Call<DetailsApiResponse> callMovieDetails(
                 @Path("movie_id") String movie_id
         );
+    }
+
+    public interface getTop250Movies {
+        @Headers({
+                "Accept: application/json"
+        })
+        @GET("Top250Movies/k_78zl3f66")
+        Call<TopMoviesList> callTopMovies();
     }
 }

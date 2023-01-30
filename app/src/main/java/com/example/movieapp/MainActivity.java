@@ -12,19 +12,28 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.movieapp.Adapters.HomeRecyclerAdapter;
+import com.example.movieapp.Data.AppDatabase;
 import com.example.movieapp.Listeners.OnMovieClickListener;
 import com.example.movieapp.Listeners.OnSearchApiListener;
+import com.example.movieapp.Listeners.OnTopMoviesApiListener;
 import com.example.movieapp.Models.SearchApiResponse;
+import com.example.movieapp.Models.TopMovie;
+import com.example.movieapp.Models.TopMoviesList;
 
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     SearchView searchView;
     MovieService service;
+    AppDatabase database;
+    Button buttonFavourites;
     //TextView text;
     private SensorManager sensorManager;
     private int shake_count = 0;
@@ -36,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        database = AppDatabase.getInstance(this);
         searchView = findViewById(R.id.search_view);
+        buttonFavourites = findViewById(R.id.favourites_button);
         //text = findViewById(R.id.text_test);
         service = new MovieService(this);
 
@@ -47,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         acceleration = 10f;
         currentAcceleration = SensorManager.GRAVITY_EARTH;
         lastAcceleration = SensorManager.GRAVITY_EARTH;
+
+        buttonFavourites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FavouriteMoviesActivity.class));
+            }
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -78,12 +96,11 @@ public class MainActivity extends AppCompatActivity {
                 float delta = currentAcceleration - lastAcceleration;
                 acceleration = acceleration * 0.9f + delta;
 
-                if (shake_count > 15) {
-                    String id = buildRandomId();
+                if (shake_count > 5) {
+                    //String id = buildRandomId();
                     shake_count = 0;
+                    service.searchTopMovies(listener);
                     //Toast.makeText(MainActivity.this, "Shake complete " + id, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, DetailsActivity.class)
-                            .putExtra("movie_data", id));
                 }
 
                 if (acceleration > 25) {
@@ -108,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         //return (int)((Math.random() * (max - min)) + min);
     }
 
-    private String buildRandomId() {
+    /*private String buildRandomId() {
         int min = 1, max = 9916880;
         int randomInt = getRandomId(min, max);
         String rawId = String.valueOf(randomInt);
@@ -123,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
         id.insert(0, "tt");
 
         return id.toString();
-    }
+    }*/
     @Override
     protected void onResume() {
         super.onResume();
@@ -134,5 +151,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         sensorManager.unregisterListener(sensorEventListener);
         super.onPause();
+    }
+
+    private final OnTopMoviesApiListener listener = new OnTopMoviesApiListener() {
+        @Override
+        public void onResponse(TopMoviesList response) {
+            if (response == null) {
+                Toast.makeText(MainActivity.this, "No data available", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            randomMovie(response);
+        }
+
+        @Override
+        public void onError(String message) {
+            Toast.makeText(MainActivity.this, "An error occurred!", Toast.LENGTH_SHORT).show();
+        }
+    };
+
+    private void randomMovie(TopMoviesList response) {
+        int number = getRandomId(0, 249);
+        List<TopMovie> list = response.getItems();
+        TopMovie randomMovie = list.get(number);
+
+        startActivity(new Intent(MainActivity.this, DetailsActivity.class)
+                .putExtra("movie_data", randomMovie.getId()));
     }
 }

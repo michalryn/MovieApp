@@ -1,0 +1,7 @@
+
+b	java:S101*"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÜíÎ§
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§œºµøÿÿÿÿ
+E
+java:S1874'"/Remove this use of "execute"; it is deprecated.(‰ó®š
+G
+java:S1874*"1Remove this use of "AsyncTask"; it is deprecated.(ÜíÎ§

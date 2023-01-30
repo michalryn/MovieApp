@@ -1,7 +1,10 @@
 
-f	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¼ğ•
-l	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âşË[8é·¶Ò0
-r	java:S117P"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ßÿøÿÿÿÿ8ºŸ„·Ò0
-m	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñü·»8íè‰·Ò0
-k	java:S114J"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÓõÛÚüÿÿÿÿ
-m	java:S114T"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(àÍ•í8é·¶Ò0
+q
+java:S1192+"TDefine a constant instead of duplicating this literal "Couldn't fetch data" 3 times.(ÇÑí„8îíÖƒß0
+f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¼ğ•
+e	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âşË[
+k	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ßÿøÿÿÿÿ
+f	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñü·»
+k	java:S114b"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÓõÛÚüÿÿÿÿ
+f	java:S114l"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(àÍ•í
+k	java:S114v"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¼šÆşÿÿÿÿ

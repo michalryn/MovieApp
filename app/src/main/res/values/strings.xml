@@ -3,4 +3,6 @@
     <string name="details_movie_name">Movie Name</string>
     <string name="details_actors">Actors</string>
     <string name="details_characters">Characters</string>
+    <string name="favourite_films">Favourites</string>
+    <string name="country_search">Country Search</string>
 </resources>
